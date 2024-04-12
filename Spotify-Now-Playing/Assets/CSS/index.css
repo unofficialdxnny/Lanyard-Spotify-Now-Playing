@@ -71,3 +71,19 @@ body {
     color: white;
 
 }
+
+#submit {
+    width:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    margin: 5px 28%;
+    
+}
+
+input[type="submit"] {
+    color: white;
+}
