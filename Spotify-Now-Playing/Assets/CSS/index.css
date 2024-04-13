@@ -1,9 +1,6 @@
-
 /* Below code is "stolen" from Wil van der Tuin (https://codepen.io/Jeromche/pen/KKQrGgP)  
 looked too clean to view and not use
-
 also the reason you are able to see this project haha
-
 */
 
 @keyframes rotate {
@@ -69,7 +66,6 @@ body {
 
 .input-box::placeholder {
     color: white;
-
 }
 
 #submit {
@@ -81,9 +77,12 @@ body {
     border: 2px solid #fff;
     outline: none;
     margin: 5px 28%;
-    
 }
 
 input[type="submit"] {
     color: white;
 }
+
+/* custom alert */
+/* success */
+
