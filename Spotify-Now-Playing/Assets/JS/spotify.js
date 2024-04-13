@@ -27,12 +27,19 @@ function fetchLanyardData(userId) {
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
         });
+        
 }
 
 // Example usage
-const discordUserId = getDiscordUserIdFromUrl();
-if (discordUserId) {
-    fetchLanyardData(discordUserId);
-} else {
-    console.error("Discord user ID not found in the URL");
+function fetchLanyardDataEverySecond() {
+    const discordUserId = getDiscordUserIdFromUrl();
+    if (discordUserId) {
+        fetchLanyardData(discordUserId);
+        console.clear()
+    } else {
+        console.error("Discord user ID not found in the URL");
+    }
 }
+
+
+setInterval(fetchLanyardDataEverySecond, 1000);
