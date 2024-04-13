@@ -1,5 +1,7 @@
 # Lanyard-Spotify-Now-Playing
+
 This project lets users display their current Spotify listening activity on a webpage and customize its appearance using CSS.
+
 ----
 
 ## Features
