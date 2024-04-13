@@ -1,15 +1,12 @@
 function extractCssFromUrl() {
     const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get('css');
+    return urlParams.getAll('css');
 }
 
-// Function to apply extracted CSS styles to the HTML
 function applyCss(styles) {
     const styleTag = document.getElementById('custom-css');
-    styleTag.textContent = decodeURIComponent(styles);
-    console.log(styles)
+    styleTag.textContent = styles.join(' ');
 }
-
             // Function to extract Discord user ID from URL
             function getDiscordUserIdFromUrl() {
                 const urlParams = new URLSearchParams(window.location.search);
