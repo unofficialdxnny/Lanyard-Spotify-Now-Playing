@@ -5,6 +5,7 @@ function redirectToSpotifyPage(userId) {
   }
 }
 
+
 // Function to handle form submission
 function submit() {
   const userId = document.getElementById("userID").value;

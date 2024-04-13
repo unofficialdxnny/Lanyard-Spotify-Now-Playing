@@ -9,6 +9,12 @@ function getDiscordUserIdFromUrl() {
 // const discordUserId = getDiscordUserIdFromUrl();
 // console.log("Discord User ID:", discordUserId); // Output: Discord User ID: 898937224895270972
 
+// Function to redirect to home page
+function redirectToHome() {
+    window.location.href = "index.html";
+}
+
+
 // Function to make API call to Lanyard API
 function fetchLanyardData(userId) {
     const apiUrl = `https://api.lanyard.rest/v1/users/${userId}`;
@@ -22,12 +28,30 @@ function fetchLanyardData(userId) {
         })
         .then(data => {
             // Handle the data received from the API
-            console.log(`Lanyard Data for user ${userId}:`, data);
+            if (data.success && data.data && data.data.activities) {
+                const spotifyActivity = data.data.activities.find(activity => activity.name === "Spotify");
+                if (spotifyActivity) {
+                    const { album, artist, song } = spotifyActivity.state;
+                    document.querySelector('.album').innerText = album;
+                    document.querySelector('.artist').innerText = artist;
+                    document.querySelector('.song').innerText = song;
+
+                    const albumArtUrl = data.data.spotify.album_art_url;
+                    const albumArtist = data.data.spotify.artist;
+                    const songName = data.data.spotify.song;
+                    document.querySelector('.album').src = albumArtUrl;
+                    document.querySelector('.artist').textContent = albumArtist
+                    document.querySelector('.song').textContent = songName
+                } else {
+                    console.log("No Spotify activity found");
+                }
+            } else {
+                console.error("Error in Lanyard API response:", data);
+            }
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
         });
-        
 }
 
 // Example usage
@@ -38,6 +62,7 @@ function fetchLanyardDataEverySecond() {
         console.clear()
     } else {
         console.error("Discord user ID not found in the URL");
+        redirectToHome();
     }
 }
 
