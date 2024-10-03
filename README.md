@@ -67,6 +67,12 @@ This project lets users display their current Spotify listening activity on a we
 .spotify{background:linear-gradient(45deg,#ff99cc,#99ccff);padding:30px;border-radius:15px;} .album{box-shadow:0 5px 10px rgba(0,0,0,0.5);} .artist,.song{font-family:'Arial Black',sans-serif;color:#fff;text-shadow:2px 2px 5px rgba(0,0,0,0.4);}
 ```
 
+### 5. Midnight Groove
+![image](https://github.com/user-attachments/assets/eb4f3fa9-ac72-4243-91a2-8307782e55d3)
+```
+/* Main body styling to center content */body {    margin: 0;    padding: 0;    height: 100vh;    display: flex;    justify-content: center;    align-items: center;    background-color: #000;    font-family: 'Montserrat', sans-serif;}/* Container styling */.spotify {    display: flex;    flex-direction: column;    align-items: center;    justify-content: center;    background-color: #121212;    color: #fff;    padding: 20px;    border-radius: 15px;    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);    width: 100%;    max-width: 350px;    text-align: center;    transition: transform 0.3s ease, background-color 0.3s ease;}/* Album cover */.spotify .album {    width: 100%;    max-width: 250px;    height: auto;    border-radius: 10px;    object-fit: cover;    margin-bottom: 20px;    transition: transform 0.3s ease;}.spotify:hover .album {    transform: scale(1.05);}/* Song title */.spotify .song {    font-size: 1.5rem;    font-weight: 600;    margin-bottom: 10px;}/* Artist name */.spotify .artist {    font-size: 1rem;    color: #b3b3b3;}/* Hover effect */.spotify:hover {    transform: translateY(-10px);    background-color: #1db954;}/* Responsive adjustments */@media (max-width: 768px) {    .spotify {        padding: 15px;        max-width: 90%;    }    .spotify .song {        font-size: 1.3rem;    }    .spotify .album {        max-width: 200px;    }}
+```
+
 ## Contributing
 Contributions are welcome! Feel free to open issues or submit pull requests with improvements.
 
